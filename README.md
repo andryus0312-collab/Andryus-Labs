@@ -1,4 +1,4 @@
-Aquí está toda la información para lo cual he fusionado la visión estratégica del **Documento Maestro** con los detalles técnicos precisos de la **Especificación Técnica**, dándole un formato visualmente impactante, profesional y listo para copiar y pegar directamente en GitHub.
+Aquí está toda la información para lo cual he fusionado la visión estratégica del **Documento Maestro** con los detalles técnicos precisos de la **Especificación Técnica**, dándole un formato visualmente impactante a fin de que sepas todo lo necesario con respecto a este proyecto.
 
 ***
 
