@@ -1,34 +1,17 @@
 ```markdown
-<div align="center">
-
 # 🧪 ANDRYUS LAB
 
-### ⚡ Microherramientas Digitales · Minimalistas · Efímeras · Poderosas ⚡
-
-<br>
-
-![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=github)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Mobile First](https://img.shields.io/badge/Mobile--First-✅-FF69B4?style=for-the-badge)
-![Local First](https://img.shields.io/badge/Local--First-🚀-00C853?style=for-the-badge)
-
-<br>
-
-> _"No almacenar lo que puede calcularse nuevamente;_
-> _no conservar lo que puede expirar;_
-> _no subir al servidor lo que puede procesarse en el navegador."_ 🌐✨
-
-<br>
-
-[🚀 Empezar](#-empezar) · [📖 Documentación](#-documentación) · [🧰 Herramientas](#-herramientas) · [🏗️ Arquitectura](#-arquitectura) · [🤝 Contribuir](#-contribuir)
-
-</div>
+## ⚡ Microherramientas Digitales · Minimalistas · Efímeras · Poderosas ⚡
 
 ---
 
-## 🌟 ¿Qué es Andryus Lab?
+> _"No almacenar lo que puede calcularse nuevamente;_  
+> _no conservar lo que puede expirar;_  
+> _no subir al servidor lo que puede procesarse en navegador."_
+
+---
+
+## 🌟 ¿QUÉ ES ANDRYUS LAB?
 
 **Andryus Lab** es una plataforma web modular compuesta por pequeñas herramientas independientes, diseñada bajo una filosofía radical: **resolver problemas concretos con el mínimo almacenamiento posible, bajo coste operativo y datos efímeros cuando sea viable**.
 
@@ -38,58 +21,80 @@ No es otra aplicación monolítica. No es otro SaaS que consume recursos inneces
 
 Construir un motor de pequeñas soluciones donde **10.000 usuarios pueden utilizar una herramienta miles de veces sin que cada uso obligue a guardar un archivo o una fila permanente**.
 
----
+### 💡 Propósito
 
-## 🧭 Filosofía · Principios Arquitectónicos
-
-| # | 🎯 Principio | 📜 Regla |
-|---|---|---|
-| 1️⃣ | **Local-first** | Si una operación puede hacerse con JavaScript en el dispositivo, se hace localmente. |
-| 2️⃣ | **Data minimization** | Solo se almacena el mínimo dato imprescindible. |
-| 3️⃣ | **Ephemeral by default** | Los datos temporales tienen TTL y deben eliminarse automáticamente. ♻️ |
-| 4️⃣ | **No heavy storage** | Evitar usar la nube como depósito de PDFs, imágenes o vídeos cuando puedan generarse localmente. |
-| 5️⃣ | **Provider independence** | Firebase y Supabase son componentes intercambiables; no hay dependencia conceptual de uno solo. |
-| 6️⃣ | **Modularity** | Cada herramienta es un módulo con entrada, procesamiento, salida y pruebas propias. |
+Cada herramienta resuelve una necesidad concreta: **calcular, convertir, diagnosticar, generar, comparar, transformar o compartir información de manera temporal**.
 
 ---
 
-## 🏗️ Arquitectura General
+## 🧭 FILOSOFÍA · PRINCIPIOS ARQUITECTÓNICOS
+
+Estos principios **no son negociables**. Cada decisión técnica debe pasar por ellos.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      👤 USUARIO / MÓVIL                      │
-│                         (HTTPS)                              │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│              🎨 FRONTEND ESTÁTICO (Vite + TS)                │
-│         HTML + CSS + JavaScript/TypeScript                   │
-│    UI · Herramientas locales · Validaciones                  │
-└──────────────┬──────────────────────────────┬───────────────┘
-               │                              │
-               ▼                              ▼
-┌──────────────────────────┐    ┌──────────────────────────────┐
-│   🌐 NAVEGADOR           │    │  🔥 FIREBASE                  │
-│   Cálculo local          │    │  Auth / funciones puntuales   │
-│   PDF / imágenes         │    │  Datos ligeros                │
-│   IndexedDB              │    │  Sincronización               │
-└──────────────────────────┘    └──────────────────────────────┘
-                                          │
-                                          ▼
-                           ┌──────────────────────────────┐
-                           │  ⚡ SUPABASE                  │
-                           │  PostgreSQL · Edge Functions  │
-                           │  Storage puntual              │
-                           │  APIs estructuradas           │
-                           └──────────────────────────────┘
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         🎯 PRINCIPIOS FUNDAMENTALES                          ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
+
+| # | Principio | Regla |
+|---|-----------|-------|
+| 1️⃣ | **Local-first** | Si una operación puede hacerse con JavaScript en el dispositivo, se hace localmente |
+| 2️⃣ | **Data minimization** | Solo se almacena el mínimo dato imprescindible |
+| 3️⃣ | **Ephemeral by default** | Los datos temporales tienen TTL y deben eliminarse automáticamente ♻️ |
+| 4️⃣ | **No heavy storage** | Evitar usar la nube como depósito de archivos cuando puedan generarse localmente |
+| 5️⃣ | **Provider independence** | Firebase y Supabase son componentes intercambiables |
+| 6️⃣ | **Modularity** | Cada herramienta es un módulo con entrada, procesamiento, salida y pruebas propias |
+
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🏗️ ARQUITECTURA GENERAL
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           👤 USUARIO / MÓVIL                                │
+│                              (HTTPS)                                        │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    🎨 FRONTEND ESTÁTICO (Vite + TS)                         │
+│              HTML + CSS + JavaScript/TypeScript                             │
+│         UI · Herramientas locales · Validaciones                            │
+└──────────────────┬─────────────────────────────────────┬────────────────────┘
+                   │                                     │
+                   ▼                                     ▼
+┌──────────────────────────────┐         ┌──────────────────────────────────┐
+│   🌐 NAVEGADOR               │         │  🔥 FIREBASE                     │
+│   • Cálculo local            │         │  • Auth / funciones puntuales    │
+│   • PDF / imágenes           │         │  • Datos ligeros                 │
+│   • IndexedDB                │         │  • Sincronización                │
+└──────────────────────────────┘         └──────────────────────────────────┘
+                                                    │
+                                                    ▼
+                                   ┌──────────────────────────────────┐
+                                   │  ⚡ SUPABASE                     │
+                                   │  • PostgreSQL · Edge Functions   │
+                                   │  • Storage puntual               │
+                                   │  • APIs estructuradas            │
+                                   └──────────────────────────────────┘
 ```
 
 > ⚠️ **Nota:** No es obligatorio usar Firebase y Supabase simultáneamente. La arquitectura permite que cada herramienta use solo frontend, frontend+Firebase, frontend+Supabase, o una combinación controlada cuando exista una razón técnica.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ STACK TECNOLÓGICO
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           🚀 TECNOLOGÍAS UTILIZADAS                          ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
 
 | Capa | Tecnología | Razón |
 |---|---|---|
@@ -102,30 +107,56 @@ Construir un motor de pequeñas soluciones donde **10.000 usuarios pueden utiliz
 | ✨ **Lint/Format** | ESLint + Prettier | Consistencia del código |
 | 🚀 **CI/CD** | GitHub Actions | Build y tests automáticos |
 
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
 ---
 
-## 🧰 Herramientas Incluidas
+## 🧰 HERRAMIENTAS INCLUIDAS
 
 ### 🔧 Herramientas 100% Locales (sin backend)
 
-| Herramienta | Descripción | Persistencia |
-|---|---|---|
-| 💰 **Real Cost Calculator** | Calcula el coste real de un producto incluyendo envío, comisiones, impuestos, empaque y publicidad. | ❌ Ninguna |
-| 🔋 **Battery Runtime Calculator** | Estima la autonomía de una batería con advertencias sobre los supuestos del cálculo. | ❌ Ninguna |
-| 📱 **QR Generator** | Genera códigos QR localmente sin guardar el contenido en ningún servidor. | ❌ Ninguna |
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 💰 REAL COST CALCULATOR                                                     │
+│ Calcula el coste real de un producto incluyendo envío, comisiones,          │
+│ impuestos, empaque y publicidad.                                            │
+│ Persistencia: ❌ Ninguna                                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 🔋 BATTERY RUNTIME CALCULATOR                                               │
+│ Estima la autonomía de una batería con advertencias sobre los supuestos     │
+│ del cálculo.                                                                │
+│ Persistencia: ❌ Ninguna                                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 📱 QR GENERATOR                                                             │
+│ Genera códigos QR localmente sin guardar el contenido en ningún servidor.   │
+│ Persistencia: ❌ Ninguna                                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ### 🔄 Herramientas con Persistencia Temporal
 
-| Herramienta | Descripción | Persistencia |
-|---|---|---|
-| 📨 **Temporary Share** | Comparte texto o datos con enlaces que expiran automáticamente (TTL configurable). | ✅ Remota con TTL |
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 📨 TEMPORARY SHARE                                                          │
+│ Comparte texto o datos con enlaces que expiran automáticamente              │
+│ (TTL configurable).                                                         │
+│ Persistencia: ✅ Remota con TTL                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 ESTRUCTURA DEL PROYECTO
 
 ```
 andryus-lab/
+│
 ├── 📂 apps/
 │   └── 📂 web/
 │       └── 📂 src/
@@ -133,27 +164,33 @@ andryus-lab/
 │           ├── 📂 components/
 │           │   ├── 📂 layouts/
 │           │   └── 📂 pages/
+│           │
 │           ├── 📂 tools/                  ⭐ Cada herramienta es un módulo
 │           │   ├── 📂 real-cost/
 │           │   ├── 📂 battery-runtime/
 │           │   ├── 📂 qr-generator/
 │           │   └── 📂 temporary-share/
+│           │
 │           ├── 📂 domain/                 🧠 Lógica pura de negocio
 │           ├── 📂 repositories/
 │           ├── 📂 adapters/
 │           │   ├── 📂 firebase/
 │           │   └── 📂 supabase/
+│           │
 │           ├── 📂 storage/
 │           ├── 📂 security/
 │           └── 📂 utils/
+│
 ├── 📂 packages/
 │   ├── 📂 ui/
 │   ├── 📂 schemas/
 │   └── 📂 config/
+│
 ├── 📂 docs/
 ├── 📂 tests/
 ├── 📂 public/
 ├── 📂 .github/workflows/
+│
 ├── 📄 package.json
 ├── 📄 tsconfig.json
 └── 📄 README.md
@@ -163,39 +200,46 @@ andryus-lab/
 
 ---
 
-## ♻️ Ciclo de Vida de los Datos Temporales
+## ♻️ CICLO DE VIDA DE LOS DATOS TEMPORALES
 
 ```
     ┌──────────┐
     │  CREAR   │
     └────┬─────┘
+         │
          ▼
     ┌──────────┐
     │ VALIDAR  │
     └────┬─────┘
+         │
          ▼
     ┌──────────────────┐
     │ GUARDAR SOLO     │
     │ LO NECESARIO     │
     └────┬─────────────┘
+         │
          ▼
     ┌──────────────────┐
     │ ASIGNAR TTL /    │
     │ expiresAt        │
     └────┬─────────────┘
+         │
          ▼
     ┌──────────┐
     │ UTILIZAR │
     └────┬─────┘
+         │
          ▼
     ┌──────────────────┐
     │ EXPIRAR O        │
     │ ELIMINAR         │
     └────┬─────────────┘
+         │
          ▼
     ┌──────────────────┐
     │ LIMPIAR ÍNDICES  │
     └────┬─────────────┘
+         │
          ▼
     ┌──────────────────┐
     │ ESPACIO          │
@@ -218,7 +262,7 @@ andryus-lab/
 
 ---
 
-## 🚀 Empezar
+## 🚀 EMPEZAR
 
 ### 📥 Instalación
 
@@ -259,7 +303,7 @@ VITE_SUPABASE_ANON_KEY=
 
 ---
 
-## 🧪 Testing
+## 🧪 TESTING
 
 Cada herramienta incluye pruebas unitarias que cubren:
 
@@ -288,7 +332,13 @@ describe("calculateRealCost", () => {
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ ROADMAP
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          📅 PLAN DE IMPLEMENTACIÓN                           ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
 
 | Fase | Sprint | Descripción |
 |---|---|---|
@@ -301,16 +351,157 @@ describe("calculateRealCost", () => {
 | 📊 **Fase 6** | Sprint 6 | Métricas + monetización experimental |
 | 🚀 **Fase 7** | Sprint 7 | Nuevas herramientas basadas en uso real |
 
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
 ---
 
-## 🔒 Seguridad
+## 🔒 SEGURIDAD
 
-- 🚫 Nunca colocar claves privadas o service-role keys en el frontend
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          🛡️ POLÍTICAS DE SEGURIDAD                           ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
+
+- 🚫 **Nunca** colocar claves privadas o service-role keys en el frontend
 - ✅ Validar datos tanto en cliente como en servidor
 - 🔐 Aplicar autorización por usuario/registro
 - 📏 Limitar tamaño de payloads
 - ⏱️ Aplicar rate limiting a endpoints públicos
 - 🧼 Sanitizar contenido HTML
+- 🛡️ Separar identificadores públicos de internos
+
+> 📌 **Regla:** Cualquier cosa que llegue al navegador debe considerarse potencialmente visible para el usuario. El frontend **nunca** es un lugar seguro para secretos.
+
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 💎 MODELO DE MONETIZACIÓN
+
+| Nivel | Descripción |
+|---|---|
+| 🆓 **Gratis** | Herramientas esenciales sin cuenta |
+| 📢 **Publicidad** | Solo cuando exista tráfico suficiente |
+| 👑 **Premium** | Historial, sincronización, personalización |
+| 🏢 **B2B** | Paquetes para pequeños negocios |
+| 🤝 **Afiliación** | Solo con relación natural y transparente |
+| 🎯 **Especializadas** | Productos digitales con valor concreto |
+
+---
+
+## 📱 MOBILE-FIRST
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                       📱 DISEÑO MÓVIL PRIORITARIO                            ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
+
+- 📐 Interfaz usable desde 360px de ancho
+- 👆 Botones táctiles grandes
+- 🚫 No depender de hover
+- ⌨️ Inputs con teclado numérico cuando corresponda
+- ⚡ Procesamiento local para evitar esperas
+- 🤖 Compatibilidad con navegadores Android modernos
+- 🎭 Estados claros: calculando, listo, error, copiado, expirado
+
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 📊 OBSERVABILIDAD
+
+Se monitorean las siguientes métricas **sin registrar contenido privado**:
+
+- ⏱️ Tiempo de respuesta
+- ❌ Errores por endpoint
+- 📈 Elementos temporales creados/expirados
+- 📦 Tamaño promedio de payload
+- 🌐 Uso de egress y almacenamiento
+- 🐛 Tasa de errores del frontend
+
+---
+
+## 🤝 CONTRIBUIR
+
+Las contribuciones son bienvenidas. Antes de contribuir:
+
+```
+1️⃣  🍴 Haz fork del repositorio
+2️⃣  🌿 Crea una rama para tu feature (git checkout -b feature/nueva-herramienta)
+3️⃣  ✍️ Escribe tests para tu código
+4️⃣  💾 Haz commit de tus cambios (git commit -m 'feat: añadir nueva herramienta')
+5️⃣  🚀 Haz push a la rama (git push origin feature/nueva-herramienta)
+6️⃣  📨 Abre un Pull Request
+```
+
+### ✅ Checklist antes de enviar un PR
+
+- [ ] Código tipado y formateado
+- [ ] Tests pasando
+- [ ] Sin secretos en Git
+- [ ] Validación de entradas
+- [ ] Responsive en Android
+- [ ] Accesibilidad básica
+- [ ] Errores manejados
+- [ ] Documentación de la herramienta
+- [ ] Métricas mínimas
+- [ ] Política de retención definida
+
+---
+
+## 🎯 REGLAS DE ORO PARA FUTURAS IAs/DESARROLLADORES
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    🥇 PREGUNTAS OBLIGATORIAS ANTES DE CODIFICAR              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+```
+
+### 🥇 Primera Pregunta Obligatoria
+
+> _"¿Por qué esta función no puede ejecutarse localmente?"_
+
+Si existe una respuesta técnica válida → se añade el servicio.  
+Si no existe → **permanece local**.
+
+### 🥈 Segunda Pregunta Obligatoria
+
+> _"¿Qué dato estamos almacenando y durante cuánto tiempo?"_
+
+Si no existe una respuesta concreta → **ese dato no debe almacenarse**.
+
+```
+╚══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 📜 LICENCIA
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) para más detalles.
+
+---
+
+```
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                    🧪 Hecho con 💙 por la comunidad Andryus Lab              ║
+║                                                                              ║
+║         Andryus Lab no es "un sitio que almacena herramientas".              ║
+║              Es un motor de pequeñas soluciones. ⚡                           ║
+║                                                                              ║
+║                    📅 Documento Maestro v1.0 · Septiembre 2026               ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+```ML
 - 🛡️ Separar identificadores públicos de internos
 
 > 📌 **Regla:** Cualquier cosa que llegue al navegador debe considerarse potencialmente visible para el usuario. El frontend **nunca** es un lugar seguro para secretos.
