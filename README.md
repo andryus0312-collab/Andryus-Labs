@@ -1,4 +1,4 @@
-Aquí tienes el contenido completo para tu `README.md`. He fusionado la visión estratégica del **Documento Maestro** con los detalles técnicos precisos de la **Especificación Técnica**, dándole un formato visualmente impactante, profesional y listo para copiar y pegar directamente en GitHub.
+Aquí está toda la información para lo cual he fusionado la visión estratégica del **Documento Maestro** con los detalles técnicos precisos de la **Especificación Técnica**, dándole un formato visualmente impactante, profesional y listo para copiar y pegar directamente en GitHub.
 
 ***
 
@@ -7,15 +7,6 @@ Aquí tienes el contenido completo para tu `README.md`. He fusionado la visión 
 
 > **"No almacenar lo que puede calcularse nuevamente; no conservar lo que puede expirar; no subir al servidor lo que puede procesarse en el navegador."**
 
-<div align="center">
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white)](https://firebase.google.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=black)](https://supabase.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
-</div>
 
 ---
 
