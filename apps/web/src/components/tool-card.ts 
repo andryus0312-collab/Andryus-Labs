@@ -1,0 +1,11 @@
+export function createToolCard(title: string, desc: string, formHtml: string): HTMLElement {
+  const card = document.createElement('article');
+  card.className = 'tool-card';
+  card.innerHTML = `
+    <div class="tool-title">${title}</div>
+    <div class="tool-desc">${desc}</div>
+    ${formHtml}
+    <div class="status-msg"></div>
+  `;
+  return card;
+}
